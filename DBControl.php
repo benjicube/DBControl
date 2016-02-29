@@ -3,7 +3,7 @@
 
 DBControl V 0.1
 Lightweight mysqli-db-class 
-- Features basic errorreporting
+- Features basic error reporting
 Jesper Lykke Lisby (jexpo.dk)
 26.02.2016
 
@@ -58,7 +58,7 @@ class DBControl
 
 		$conn = mysqli_connect($db_host, $db_user, $db_pass, $thedatabase);
 
-		if (!$conn) { die("Database error: Connection failed"); } 
+		if (!$conn) { die("Database error: Connection failed. Check configuration."); } 
 		else { 
 			mysqli_set_charset($conn, "utf8");
 			$this->connection = $conn; 
@@ -122,7 +122,7 @@ class DBControl
 
 		$conn = mysqli_connect($db_host, $db_user, $db_pass, $thedatabase);
 
-		if (!$conn) { die("Database error: Connection failed"); }
+		if (!$conn) { die("Database error: Connection failed. Check configuration."); }
 		else {
 			$result = $conn->query($sql);
 
